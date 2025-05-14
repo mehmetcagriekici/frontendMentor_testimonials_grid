@@ -1,0 +1,366 @@
+/*font family import*/
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/*css variables*/
+:root {
+  /*theme*/
+  --color-purple-50: hsl(260, 100%, 95%);
+  --color-purple-300: hsl(264, 82%, 80%);
+  --color-purple-500: hsl(263, 55%, 52%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-grey-100: hsl(214, 17%, 92%);
+  --color-grey-200: hsl(0, 0%, 81%);
+  --color-grey-400: hsl(224, 10%, 45%);
+  --color-grey-500: hsl(217, 19%, 35%);
+  --color-dark-blue: hsl(219, 29%, 14%);
+  --color-black: hsl(0, 0%, 7%);
+
+  /*font sizes*/
+  --font-sm: clamp(0.9rem, 1.2vw, 1.2rem);
+  --font-base: clamp(1.3rem, 1.6vw, 1.6rem);
+
+  /*sizes*/
+  --card-width: clamp(20rem, 80vw, 40rem);
+  --image-width: clamp(3rem, 3vw, 5rem);
+
+  /*paddings*/
+  --grid-container-padding-x: 2rem;
+  --grid-container-padding-y: 5rem;
+  --card-padding: 1rem;
+
+  /*gaps*/
+  --grid-container-gap: 2rem;
+  --card-gap: 1.4rem;
+  --hero-gap: 0.8rem;
+
+  /*card shadow*/
+  --card-shadow: 5px 4px 3px 1px var(--color-grey-200);
+
+  /*radiuses*/
+  --card-radius: 0.6rem;
+}
+
+/*default styles*/
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100dvw;
+  height: 100dvh;
+
+  font-size: 62.5%;
+  font-family: "Barlow Semi Condensed", sans-serif;
+
+  overflow: hidden;
+}
+
+main {
+  /*whole screen main*/
+  width: 100%;
+  height: 100%;
+
+  /*center the grid*/
+  display: flex;
+  justify-content: safe center;
+  align-items: safe center;
+
+  /*forced overflow on main*/
+  overflow-y: scroll;
+
+  /*background color*/
+  background-color: var(--color-grey-100);
+}
+
+img {
+  /*fit image to its parent*/
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+  border-radius: inherit;
+}
+
+/*grid container*/
+.grid-container {
+  /*size*/
+  width: 100%;
+  height: auto;
+
+  /*display, flex for small devices*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--grid-container-gap);
+
+  /*padding*/
+  padding: var(--grid-container-padding-y) var(--grid-container-padding-x);
+}
+
+/*card*/
+.card {
+  /*size*/
+  width: var(--card-width);
+  height: auto;
+
+  /*display, flex 1 col on all devices*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: var(--card-gap);
+
+  /*padding*/
+  padding: var(--card-padding);
+
+  /*card radius*/
+  border-radius: var(--card-radius);
+
+  /*card shadow*/
+  box-shadow: var(--card-shadow);
+}
+
+/*card hero*/
+.hero {
+  /*display, grid on all devices*/
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  justify-items: start; /*horizontal alignment*/
+  align-items: center; /*vertical alignment*/
+}
+
+/*avatar*/
+.avatar {
+  /*grid placement*/
+  grid-row: 2/4;
+  grid-column: 1/2;
+
+  /*image size*/
+  width: var(--image-width);
+
+  /*center image*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /*border*/
+  border: 2px solid var(--color-purple-300);
+  border-radius: 50rem;
+}
+
+/*name*/
+.name {
+  /*grid placement*/
+  grid-row: 2/3;
+  grid-column: 3/12;
+}
+
+.name p {
+  /*typography*/
+  font-size: var(--font-sm);
+  font-weight: 500;
+}
+
+/*status*/
+.status {
+  /*grid placement*/
+  grid-row: 3/4;
+  grid-column: 3/12;
+}
+
+.status p {
+  /*typography*/
+  font-size: var(--font-sm);
+  opacity: 80%;
+}
+
+/*main text*/
+.main-text {
+  max-width: 90%;
+}
+
+.main-text p {
+  /*typography*/
+  font-size: var(--font-base);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/*sub text*/
+.sub-text p {
+  /*typography*/
+  font-size: var(--font-sm);
+  opacity: 85%;
+  line-height: 1.5;
+}
+
+/*card 1*/
+.card-1 {
+  /*background color*/
+  background-color: var(--color-purple-500);
+
+  /*typography*/
+  color: var(--color-purple-50);
+}
+
+/*card 2*/
+.card-2 {
+  /*background color*/
+  background-color: var(--color-grey-500);
+
+  /*typography*/
+  color: var(--color-white);
+}
+
+/*card 3*/
+.card-3 {
+  /*background color*/
+  background-color: var(--color-white);
+
+  /*typography*/
+  color: var(--color-grey-500);
+}
+
+/*card 4*/
+.card-4 {
+  /*background color*/
+  background-color: var(--color-dark-blue);
+
+  /*typography*/
+  color: var(--color-white);
+}
+
+/*card 5*/
+.card-5 {
+  /*background color*/
+  background-color: var(--color-white);
+
+  /*typography*/
+  color: var(--color-grey-500);
+}
+
+/*media queries*/
+@media (min-width: 768px) {
+  :root {
+    /*increase the font sizes*/
+    --font-sm: clamp(0.9rem, 3vw, 2rem);
+    --font-base: clamp(1.3rem, 3.9vw, 3.2rem);
+
+    /*decrease the card width*/
+    --card-width: clamp(20rem, 60vw, 40rem);
+
+    /*increase the image size*/
+    --image-width: clamp(3rem, 8vw, 10rem);
+
+    /*increase the card padding*/
+    --card-padding: 2.6rem;
+
+    /*increase the card radius*/
+    --card-radius: 1.2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    /*reduce font sizes*/
+    --font-sm: clamp(0.9rem, 1.1vw, 1.5rem);
+    --font-base: clamp(1.3rem, 1.2vw, 1.6rem);
+
+    /*reset card width*/
+    --card-width: auto;
+
+    /*decrease the image size*/
+    --image-width: clamp(3rem, 3vw, 4rem);
+
+    /*decrease the card padding*/
+    --card-padding: 1rem;
+
+    /*decrease the card radius*/
+    --card-radius: 0.8rem;
+
+    /*reduce card gap*/
+    --card-gap: 0.5rem;
+
+    /*reduce hero gap*/
+    --hero-gap: 0.4rem;
+  }
+
+  main {
+    /*to fit the main layout on larger screens*/
+    position: relative;
+  }
+
+  .grid-container {
+    /*fit the main layout*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+
+    /*fix size*/
+    max-height: 70%;
+    max-width: 80%;
+
+    /*display grid*/
+    display: grid;
+    grid-template-areas:
+      "a a b c"
+      "d g g c";
+
+    /*cancel padding*/
+    padding: 0;
+  }
+
+  .card {
+    /*adjust card sizes*/
+    height: 100%;
+    width: 100%;
+  }
+
+  .hero {
+    /*adjust hero width*/
+    width: 60%;
+  }
+
+  .card-1 {
+    /*grid placement*/
+    grid-area: a;
+
+    position: relative;
+  }
+
+  .card-1::after {
+    content: url("./images/bg-pattern-quotation.svg");
+
+    position: absolute;
+    top: 0;
+    right: 5%;
+
+    opacity: 80%;
+  }
+
+  .card-2 {
+    /*grid placement*/
+    grid-area: b;
+  }
+
+  .card-3 {
+    /*grid placement*/
+    grid-area: d;
+  }
+
+  .card-4 {
+    /*grid placement*/
+    grid-area: g;
+  }
+
+  .card-5 {
+    /*grid placement*/
+    grid-area: c;
+  }
+}
